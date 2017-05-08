@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#ff1ba1ee"
+    tools:context="com.example.aasviken.weatherapp.MainActivity">
+
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:id="@+id/pressure"
+        android:layout_below="@+id/winddirection"
+        android:layout_alignLeft="@+id/winddirection"
+        android:layout_alignStart="@+id/winddirection" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:id="@+id/winddirection"
+        android:layout_below="@+id/windspeed"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:id="@+id/windspeed"
+        android:layout_below="@+id/temperatur"
+        android:layout_alignLeft="@+id/winddirection"
+        android:layout_alignStart="@+id/winddirection" />
+
+    <Button
+        android:text="Vis langtidsvarsel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="47dp"
+        android:id="@+id/langtidsvarselknapp"
+        style="@style/Widget.AppCompat.Button.Borderless" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:id="@+id/temperatur"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/windspeed"
+        android:layout_alignStart="@+id/windspeed" />
+
+
+</RelativeLayout>
+
