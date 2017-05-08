@@ -29,7 +29,7 @@ public class LangtidsActivity extends AppCompatActivity {
                 for (int i = 1;i<langtids.size(); i++){
                     Time t = langtids.get(i);
                     String [] test  = t.getFrom().split("T");
-                    neste+=(String.valueOf(t.getFrom()+test[0]+" Til "+t.getTo()+test[0]+t.getTemperature().getValue()+" °"+t.getTemperature().getUnit()+"\n"));
+                    neste+=(String.valueOf(t.getFrom()+test[0]+" Til "+t.getTo()+test[0]+""+t.getTemperature().getValue()+" °"+t.getTemperature().getUnit()+"\n"));
                 }
                 langtidsvarsel.setText(neste);
             }
