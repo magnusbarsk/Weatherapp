@@ -17,6 +17,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:textColor="#fff"
+        android:textSize="20dp"
         android:layout_centerHorizontal="true"
         android:id="@+id/langtidstext" />
 
@@ -27,6 +29,8 @@
         android:layout_marginTop="81dp"
         android:maxLines="30"
         android:scrollbars="vertical"
+        android:textColor="#fff"
+        android:textSize="20dp"
         android:id="@+id/langtidsvarsel"
         android:layout_below="@+id/langtidstext"
         android:layout_alignParentLeft="true"

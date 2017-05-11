@@ -25,11 +25,22 @@ public class LangtidsActivity extends AppCompatActivity {
 
                 List<Time> langtids = feed.getForecast().getTimeList();
                 String neste = "";
-
+                String currentDato = "";
                 for (int i = 1;i<langtids.size(); i++){
                     Time t = langtids.get(i);
-                    String [] test  = t.getFrom().split("T");
-                    neste+=(String.valueOf(t.getFrom()+test[0]+" Til "+t.getTo()+test[0]+""+t.getTemperature().getValue()+" °"+t.getTemperature().getUnit()+"\n"));
+                    String [] from  = t.getFrom().split("T");
+                    String [] to = t.getTo().split("T");
+                    String [] tidsplittFrom = from[1].split(":");
+                    String [] tidsplittTo = to[1].split(":");
+                    String [] datosplit = from[0].split("-");
+
+                    if(!currentDato.equals(from[0])) {
+                        neste+= "\n"+datosplit[2]+"-"+datosplit[1]+"-"+datosplit[0]+"\n";
+                        currentDato = from[0];
+                    }
+
+
+                    neste+=tidsplittFrom[0]+":"+tidsplittFrom[1]+" Til "+" "+tidsplittTo[0]+":"+tidsplittTo[1]+" | "+t.getTemperature().getValue()+"°"+t.getTemperature().getUnit()+"\n";
                 }
                 langtidsvarsel.setText(neste);
             }
