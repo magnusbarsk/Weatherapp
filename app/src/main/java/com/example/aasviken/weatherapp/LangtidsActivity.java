@@ -1,6 +1,7 @@
 package com.example.aasviken.weatherapp;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.ScrollingMovementMethod;
@@ -14,7 +15,17 @@ public class LangtidsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.langtids_activity);
-        final String url = "http://www.yr.no/sted/Norge/Nordland/Rana/Mo/varsel.xml";
+
+        Intent xmlintent = getIntent();
+
+        String protoUrl;
+        if(xmlintent.hasExtra("xml")) {
+            protoUrl = xmlintent.getExtras().getString("xml");
+        }
+        else {
+            protoUrl = "http://www.yr.no/sted/Norge/Nordland/Rana/Mo/varsel.xml";
+        }
+        final String url = protoUrl;
 
         final TextView langtidstext = (TextView) findViewById(R.id.langtidstext);
         final TextView langtidsvarsel = (TextView) findViewById(R.id.langtidsvarsel);

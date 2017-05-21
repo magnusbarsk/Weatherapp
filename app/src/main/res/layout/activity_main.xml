@@ -29,29 +29,6 @@
         android:layout_height="wrap_content"
         android:textColor="#fff"
         android:textSize="20dp"
-        android:id="@+id/winddirection"
-        android:layout_above="@+id/langtidsvarselknapp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="90dp" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#fff"
-        android:textSize="20dp"
-        android:id="@+id/temperatur"
-        android:layout_marginBottom="57dp"
-        android:layout_above="@+id/windspeed"
-        android:layout_alignLeft="@+id/windspeed"
-        android:layout_alignStart="@+id/windspeed" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#fff"
-        android:textSize="20dp"
         android:id="@+id/pressure"
         android:layout_above="@+id/langtidsvarselknapp"
         android:layout_alignLeft="@+id/winddirection"
@@ -60,7 +37,7 @@
 
     <TextView
         android:text="TextView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="#fff"
         android:textSize="20dp"
@@ -69,6 +46,39 @@
         android:layout_above="@+id/winddirection"
         android:layout_alignLeft="@+id/winddirection"
         android:layout_alignStart="@+id/winddirection" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        android:id="@+id/winddirection"
+        android:layout_marginBottom="21dp"
+        android:layout_above="@+id/pressure"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        android:id="@+id/temperatur"
+        android:layout_marginBottom="25dp"
+        android:layout_above="@+id/windspeed"
+        android:layout_alignLeft="@+id/windspeed"
+        android:layout_alignStart="@+id/windspeed" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/temperatur"
+        android:layout_alignStart="@+id/temperatur"
+        android:id="@+id/navn"
+        android:textStyle="normal|bold" />
 
 
 </RelativeLayout>

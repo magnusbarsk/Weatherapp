@@ -22,14 +22,41 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/sok"/>
 
-    <SearchView
-        android:layout_width="match_parent"
+    <EditText
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/sokefelt"
-        android:orientation="horizontal"
-        android:layout_marginTop="48dp"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginTop="40dp"
+        android:id="@+id/sokefelt2"
+        android:hint="eks: Stedsnavn, kommune, "
         android:layout_below="@+id/sok"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <Button
+        android:text="Søk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/sokefelt2"
+        android:layout_toRightOf="@+id/sok"
+        android:layout_toEndOf="@+id/sok"
+        android:id="@+id/sokeknapp"
+        style="@android:style/Widget.DeviceDefault.Light.Button" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/sokefelt2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/linearliste" />
+    </ScrollView>
+
 </RelativeLayout>
 

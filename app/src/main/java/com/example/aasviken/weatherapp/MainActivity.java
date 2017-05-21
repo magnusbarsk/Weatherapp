@@ -46,14 +46,21 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Intent sokeResultat = getIntent();
+
         final Intent intent = new Intent(this,LangtidsActivity.class);
 
-
-
-        final String url = "http://www.yr.no/sted/Norge/Nordland/Rana/Mo/varsel.xml";
+        String protoUrl;
+        if(sokeResultat.hasExtra("xml")) {
+            protoUrl = sokeResultat.getExtras().getString("xml");
+        }
+        else {
+            protoUrl = "http://www.yr.no/sted/Norge/Nordland/Rana/Mo/varsel.xml";
+        }
+        final String url = protoUrl;
 
         final Button langtidsvarselknapp = (Button) findViewById(R.id.langtidsvarselknapp);
-
+        final TextView by = (TextView) findViewById(R.id.navn);
         final TextView temperatur = (TextView) findViewById(R.id.temperatur);
         final TextView winds = (TextView) findViewById(R.id.windspeed);
         final TextView windd = (TextView) findViewById(R.id.winddirection);
@@ -63,6 +70,7 @@ public class MainActivity extends AppCompatActivity  {
         langtidsvarselknapp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                intent.putExtra("xml",url);
                 startActivity(intent);
             }
         });
@@ -71,9 +79,14 @@ public class MainActivity extends AppCompatActivity  {
 
             @Override
             public void processFinish(WeatherData feed) {
+
+                String location = feed.getLocation().getName();
+                by.setText(location);
+
+
+
                 Temperature temp = feed.getForecast().getTimeList().get(0).getTemperature();
                 temperatur.setText(String.valueOf(temp.getValue()+" °"+temp.getUnit()));
-
 
 
                 WindSpeed windss = feed.getForecast().getTimeList().get(0).getWindSpeed();
@@ -84,6 +97,7 @@ public class MainActivity extends AppCompatActivity  {
 
                 Pressure pressure = feed.getForecast().getTimeList().get(0).getPressure();
                 trykk.setText(String.valueOf(pressure.getUnit()+" "+pressure.getValue()));
+
 
 
             }

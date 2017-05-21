@@ -9,6 +9,9 @@ public class WeatherData {
     @Element(required = false)
     Forecast forecast;
 
+    @Element(required=false)
+    Location location;
+
     public Forecast getForecast() {
         return forecast;
     }
@@ -16,5 +19,13 @@ public class WeatherData {
 
     public void setForecast(Forecast forecast) {
         this.forecast = forecast;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 }
