@@ -42,6 +42,7 @@ public class Lokasjon extends AsyncTask <Double,Void,String> {
                 is.read(buffer);
                 is.close();
                 tekst = new String (buffer);
+
             }
             catch(IOException e){
                 //IOexpetions
@@ -60,6 +61,9 @@ public class Lokasjon extends AsyncTask <Double,Void,String> {
         }
         catch(IOException e){
             //IOEXEPTIONS
+        }
+        catch(IndexOutOfBoundsException ex){
+
         }
         return mydata;
 

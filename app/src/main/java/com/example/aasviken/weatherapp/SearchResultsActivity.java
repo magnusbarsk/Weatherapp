@@ -77,6 +77,7 @@ public class SearchResultsActivity extends AppCompatActivity {
                     dialog.create().show();
                 }
                 else{
+                    linearliste.removeAllViews();
                     String[] steder = fil.split("\n");
                     String test = "";
                     for(String s:steder) {
