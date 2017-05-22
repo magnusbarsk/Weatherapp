@@ -12,16 +12,6 @@
     tools:context="com.example.aasviken.weatherapp.SearchResultsActivity">
 
 
-    <TextView
-        android:text="Søk Etter Sted"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:textColor="#fff"
-        android:textSize="20dp"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/sok"/>
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -57,6 +47,29 @@
             android:orientation="vertical"
             android:id="@+id/linearliste" />
     </ScrollView>
+
+    <Button
+        android:text="Finn via GPS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/findloc"
+        style="@android:style/Widget.DeviceDefault.Button.Borderless" />
+
+    <TextView
+        android:text="Søk Etter Sted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#fff"
+        android:textSize="20dp"
+        android:id="@+id/sok"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/sokefelt2"
+        android:layout_alignEnd="@+id/sokefelt2"
+        android:layout_marginRight="23dp"
+        android:layout_marginEnd="23dp" />
 
 </RelativeLayout>
 

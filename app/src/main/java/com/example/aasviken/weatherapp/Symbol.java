@@ -14,9 +14,13 @@ public class Symbol {
     @Attribute
     String name;
 
+    @Attribute
+    String var;
+
     public String getName() {
         return name;
     }
+
 
     public void setName(String name) {
         this.name = name;
@@ -28,5 +32,13 @@ public class Symbol {
 
     public void setNumber(int number) {
         this.number = number;
+    }
+
+    public String getVar() {
+        return var;
+    }
+
+    public void setVar(String var) {
+        this.var = var;
     }
 }

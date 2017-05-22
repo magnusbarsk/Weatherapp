@@ -3,6 +3,7 @@ package com.example.aasviken.weatherapp;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.SearchView;
@@ -12,6 +13,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -65,6 +67,7 @@ public class MainActivity extends AppCompatActivity  {
         final TextView winds = (TextView) findViewById(R.id.windspeed);
         final TextView windd = (TextView) findViewById(R.id.winddirection);
         final TextView trykk = (TextView) findViewById(R.id.pressure);
+        final ImageView ikon = (ImageView) findViewById(R.id.ikon);
 
 
         langtidsvarselknapp.setOnClickListener(new View.OnClickListener() {
@@ -97,6 +100,9 @@ public class MainActivity extends AppCompatActivity  {
 
                 Pressure pressure = feed.getForecast().getTimeList().get(0).getPressure();
                 trykk.setText(String.valueOf(pressure.getUnit()+" "+pressure.getValue()));
+
+                String symboler = "ss"+feed.getForecast().getTimeList().get(0).getSymbol().getVar().replace("mf/", "").replace(".", "_");
+                ikon.setImageResource(getResources().getIdentifier(symboler, "drawable", getPackageName()));
 
 
 

@@ -31,6 +31,15 @@ public class SearchResultsActivity extends AppCompatActivity {
         final Button sokeknapp = (Button) findViewById(R.id.sokeknapp);
         final LinearLayout linearliste = (LinearLayout) findViewById(R.id.linearliste);
 
+        final Button findloc = (Button)findViewById(R.id.findloc);
+        final Intent lokintent = new Intent(this,LokActivity.class);
+        findloc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(lokintent);
+            }
+        });
+
 
         //henter ut info fra norge.txt
         String text = "";
